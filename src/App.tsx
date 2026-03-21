@@ -7,7 +7,7 @@ import { Contact } from "@/components/sections/Contact"
 
 export function App() {
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 selection:bg-amber-100 selection:text-amber-900">
+    <div className="min-h-screen flex flex-col font-sans text-neutral-900 dark:text-neutral-100 selection:bg-neutral-200 selection:text-black dark:selection:bg-neutral-700 dark:selection:text-white">
       <Header />
       <main className="flex-1">
         <Hero />
