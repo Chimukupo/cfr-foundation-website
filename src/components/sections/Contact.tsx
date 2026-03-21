@@ -7,12 +7,13 @@ export function Contact() {
         <div className="bg-white dark:bg-neutral-900 shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-neutral-200 dark:border-neutral-800">
           
           {/* Left Side: Call to Action */}
-          <div className="lg:w-5/12 p-12 lg:p-16 text-white flex flex-col justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')" }}>
-            <div className="absolute inset-0 bg-black/85"></div>
+          <div className="lg:w-5/12 p-12 lg:p-16 text-white flex flex-col justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('/images/donation_photo.jpeg')" }}>
+            <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-sm">Become A Proud <br className="hidden md:block"/>Volunteer Now</h2>
               <div className="w-16 h-1.5 bg-white mb-6"></div>
-              <p className="text-neutral-400 mb-10 text-lg leading-relaxed font-medium">
+              {/* <p className="text-neutral-400 mb-10 text-lg leading-relaxed font-medium"> */}
+              <p className="text-white mb-10 text-lg leading-relaxed font-medium">
                 Join hands with us to bring relief and create better environmental well-being for vulnerable children and youths.
               </p>
               <Button size="lg" className="bg-white hover:bg-neutral-200 text-black border-0 w-fit px-8 py-6 rounded-none font-bold uppercase tracking-wider transform hover:scale-105 transition-all shadow-lg">

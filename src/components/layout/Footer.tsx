@@ -49,7 +49,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex gap-4">
                 <MapPin className="h-5 w-5 text-neutral-500 shrink-0 mt-0.5" />
-                <span>123 Recovery Way,<br/>Nairobi, Kenya</span>
+                <span>Ngwezi Rd,<br/>Lusaka, Zambia</span>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="h-5 w-5 text-neutral-500 shrink-0" />

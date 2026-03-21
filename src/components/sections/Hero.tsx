@@ -32,7 +32,7 @@ export function Hero() {
       className="relative w-full h-[80vh] min-h-[600px] flex items-center bg-neutral-900 bg-cover bg-center overflow-hidden transition-all duration-1000" 
       style={{ backgroundImage: `url('${images[currentIndex]}')` }}
     >
-      <div className="absolute inset-0 bg-black/65 bg-gradient-to-t from-black/85 via-black/50 to-black/65"></div>
+      <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
       
       <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white max-w-4xl leading-[1.1] text-center drop-shadow-lg">

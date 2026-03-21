@@ -40,8 +40,9 @@ export function Overview() {
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] w-full bg-neutral-200 dark:bg-neutral-800 group">
                 <img 
-                  src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                  alt="Children smiling together"
+                  // src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                  src="/images/group_photo.jpeg" 
+                  alt="CareFirst Recovery Foundation Team"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
