@@ -22,7 +22,7 @@ export function Overview() {
                 Our ongoing missions aim to tackle root causes of poverty, lack of education, and environmental degradation that directly impacts young lives. We envision a world where every child enjoys their basic rights in a sustainable environment.
               </p>
             </div>
-            <Button className="bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-bold px-8 py-6 rounded-none mt-6 uppercase tracking-wider transition-transform hover:scale-105 shadow-md">
+            <Button className="bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-bold px-8 py-6 rounded-none mt-6 uppercase tracking-wider transition-transform hover:scale-105 shadow-md cursor-pointer">
               Read More
             </Button>
           </div>
@@ -34,7 +34,7 @@ export function Overview() {
             
             <div className="flex flex-col space-y-4 items-end">
               <div className="text-center w-full mb-6 relative">
-                 <h4 className="text-neutral-500 dark:text-neutral-400 font-bold text-lg mb-1 tracking-wide uppercase">In A Mission Since 2010</h4>
+                 <h4 className="text-neutral-500 dark:text-neutral-400 font-bold text-lg mb-1 tracking-wide uppercase">In A Mission Since 2020</h4>
                  <h2 className="text-2xl md:text-3xl text-black dark:text-white font-bold">To help the Helpless and uplift the Society</h2>
               </div>
 

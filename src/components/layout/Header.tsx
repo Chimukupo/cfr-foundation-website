@@ -18,15 +18,15 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white dark:bg-neutral-950 shadow-sm border-b border-neutral-200 dark:border-neutral-800">
+    <header className="sticky top-0 z-50 w-full bg-background dark:bg-neutral-950 shadow-sm border-b border-neutral-200 dark:border-neutral-800">
       <div className="container mx-auto flex h-[80px] items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black dark:bg-white text-white dark:text-black font-bold text-xl relative overflow-hidden">
-            <span className="relative z-10">C</span>
-          </div>
+          <img src="/images/cfr_icon.png" alt="CareFirst Recovery Foundation" className="h-10 w-10 object-contain" />
           <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tight text-black dark:text-white leading-none">CareFirst</span>
+            <span className="text-xl font-extrabold tracking-tight leading-none">
+              <span style={{ color: '#dc9e9f' }}>CareFirst</span>
+            </span>
             <span className="text-[10px] font-bold text-neutral-500 dark:text-neutral-400 tracking-widest mt-0.5">FOUNDATION</span>
           </div>
         </div>
@@ -34,8 +34,7 @@ export function Header() {
         {/* Nav Links */}
         <nav className="hidden lg:flex gap-8 text-[13px] font-bold tracking-wider uppercase text-neutral-600 dark:text-neutral-400">
           <a href="#" className="text-black dark:text-white transition-colors">Home</a>
-          <a href="#organization" className="hover:text-black dark:hover:text-white transition-colors">Organization</a>
-          <a href="#programmes" className="hover:text-black dark:hover:text-white transition-colors">Programmes</a>
+          <a href="#organization" className="hover:text-black dark:hover:text-white transition-colors">About Us</a>
           <a href="#events" className="hover:text-black dark:hover:text-white transition-colors">Events</a>
           <a href="#blogs" className="hover:text-black dark:hover:text-white transition-colors">Blogs</a>
           <a href="#contact" className="hover:text-black dark:hover:text-white transition-colors">Contact</a>
@@ -43,7 +42,7 @@ export function Header() {
         
         {/* Actions */}
         <div className="flex items-center gap-2">
-          <Button className="hidden md:inline-flex bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-bold uppercase tracking-wide text-xs px-6 py-5 rounded-none transition-all duration-300 transform hover:scale-105 shadow-md">
+          <Button className="hidden md:inline-flex bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-bold uppercase tracking-wide text-xs px-6 py-5 rounded-none transition-all duration-300 transform hover:scale-105 shadow-md cursor-pointer">
             Donate
           </Button>
 

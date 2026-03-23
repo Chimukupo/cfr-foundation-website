@@ -7,7 +7,7 @@ export function Contact() {
         <div className="bg-white dark:bg-neutral-900 shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-neutral-200 dark:border-neutral-800">
           
           {/* Left Side: Call to Action */}
-          <div className="lg:w-5/12 p-12 lg:p-16 text-white flex flex-col justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('/images/donation_photo.jpeg')" }}>
+          <div className="lg:w-5/12 p-12 lg:p-16 text-white flex flex-col justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('/images/donation_photo2.jpeg')" }}>
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-sm">Become A Proud <br className="hidden md:block"/>Volunteer Now</h2>
@@ -16,7 +16,7 @@ export function Contact() {
               <p className="text-white mb-10 text-lg leading-relaxed font-medium">
                 Join hands with us to bring relief and create better environmental well-being for vulnerable children and youths.
               </p>
-              <Button size="lg" className="bg-white hover:bg-neutral-200 text-black border-0 w-fit px-8 py-6 rounded-none font-bold uppercase tracking-wider transform hover:scale-105 transition-all shadow-lg">
+              <Button size="lg" className="bg-white hover:bg-neutral-200 text-black border-0 w-fit px-8 py-6 rounded-none font-bold uppercase tracking-wider transform hover:scale-105 transition-all shadow-lg cursor-pointer">
                 Donate Now
               </Button>
             </div>
@@ -31,9 +31,9 @@ export function Contact() {
             
             {/* Simple Tabs Simulation */}
             <div className="flex flex-wrap space-x-2 md:space-x-8 border-b border-neutral-200 dark:border-neutral-700 mb-8">
-              <button className="pb-4 text-black dark:text-white font-bold border-b-2 border-black dark:border-white uppercase tracking-wide text-sm md:text-base">Our Mission</button>
-              <button className="pb-4 text-neutral-400 font-semibold hover:text-neutral-700 dark:hover:text-neutral-300 uppercase tracking-wide text-sm md:text-base transition-colors">Our Vision</button>
-              <button className="pb-4 text-neutral-400 font-semibold hover:text-neutral-700 dark:hover:text-neutral-300 uppercase tracking-wide text-sm md:text-base transition-colors">Our Goal</button>
+              <button className="pb-4 text-black dark:text-white font-bold border-b-2 border-black dark:border-white uppercase tracking-wide text-sm md:text-base cursor-pointer">Our Mission</button>
+              <button className="pb-4 text-neutral-400 font-semibold hover:text-neutral-700 dark:hover:text-neutral-300 uppercase tracking-wide text-sm md:text-base transition-colors cursor-pointer">Our Vision</button>
+              <button className="pb-4 text-neutral-400 font-semibold hover:text-neutral-700 dark:hover:text-neutral-300 uppercase tracking-wide text-sm md:text-base transition-colors cursor-pointer">Our Goal</button>
             </div>
             
             <div className="text-neutral-600 dark:text-neutral-400 space-y-6 text-lg font-medium leading-relaxed">

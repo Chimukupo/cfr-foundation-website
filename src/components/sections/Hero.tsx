@@ -35,8 +35,11 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
       
       <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white max-w-4xl leading-[1.1] text-center drop-shadow-lg">
-          CareFirst Recovery <br className="hidden md:block" /> <span className="text-neutral-400">Foundation</span>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold max-w-4xl leading-[1.1] text-center drop-shadow-lg">
+          <span style={{ color: '#dc9e9f' }}>CareFirst</span>{" "}
+          <span style={{ color: '#f2f3f4' }}>Recovery</span>
+          <br />
+          <span className="text-neutral-300">Foundation</span>
         </h1>
         
         <p className="text-neutral-300 md:text-lg max-w-2xl mt-6 mb-4 text-center font-medium drop-shadow-md">
@@ -44,10 +47,10 @@ export function Hero() {
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <Button size="lg" className="bg-white hover:bg-neutral-200 text-black font-bold uppercase tracking-wide px-8 py-6 rounded-none transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <Button size="lg" className="bg-white hover:bg-neutral-200 text-black font-bold uppercase tracking-wide px-8 py-6 rounded-none transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer">
             View More
           </Button>
-          <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black font-bold uppercase tracking-wide px-8 py-6 rounded-none transition-all duration-300">
+          <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black font-bold uppercase tracking-wide px-8 py-6 rounded-none transition-all duration-300 cursor-pointer">
             Donate Now
           </Button>
         </div>
