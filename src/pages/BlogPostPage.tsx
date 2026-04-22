@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db, type BlogPost } from "@/lib/firebase";
 import { ArrowLeft } from "lucide-react";
+import { FirebaseImage } from "@/components/ui/FirebaseImage";
 
 export function BlogPostPage() {
   const { slug } = useParams();
@@ -10,6 +11,9 @@ export function BlogPostPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+
     const fetchPost = async () => {
       if (!slug) return;
       try {
@@ -61,7 +65,7 @@ export function BlogPostPage() {
         
         {post.imageUrl && (
           <div className="mb-12 rounded-none overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-800">
-            <img src={post.imageUrl} alt={post.title} className="w-full h-auto object-cover max-h-[600px]" />
+            <FirebaseImage src={post.imageUrl} alt={post.title} className="w-full h-auto object-cover max-h-[600px]" />
           </div>
         )}
         

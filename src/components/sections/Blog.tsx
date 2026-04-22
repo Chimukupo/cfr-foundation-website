@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { getPublishedPosts, type BlogPost } from "@/lib/firebase"
+import { FirebaseImage } from "@/components/ui/FirebaseImage"
 
 export function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -52,7 +53,7 @@ export function Blog() {
               <Link to={`/blog/${post.slug}`} className="flex flex-col h-full">
                 <div className="relative h-64 overflow-hidden">
                   {post.imageUrl ? (
-                    <img 
+                    <FirebaseImage 
                       src={post.imageUrl} 
                       alt={post.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
