@@ -8,7 +8,7 @@ import { BlogsPage } from "@/pages/BlogsPage"
 export function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col font-sans text-neutral-900 dark:text-neutral-100 selection:bg-neutral-200 selection:text-black dark:selection:bg-neutral-700 dark:selection:text-white">
+      <div className="flex min-h-screen flex-col font-sans text-neutral-900 selection:bg-neutral-200 selection:text-black dark:text-neutral-100 dark:selection:bg-neutral-700 dark:selection:text-white">
         <Header />
         <main className="flex-1">
           <Routes>
