@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { collection, query, where, getDocs } from "firebase/firestore"
-import { db, type BlogPost } from "@/lib/firebase"
+import { db, type BlogPost, normalizeBlogPost } from "@/lib/firebase"
 import { ArrowLeft } from "lucide-react"
 import { FirebaseImage } from "@/components/ui/FirebaseImage"
 
@@ -24,10 +24,8 @@ export function BlogPostPage() {
         )
         const snapshot = await getDocs(q)
         if (!snapshot.empty) {
-          setPost({
-            id: snapshot.docs[0].id,
-            ...snapshot.docs[0].data(),
-          } as BlogPost)
+          const d = snapshot.docs[0]
+          setPost(normalizeBlogPost(d.id, d.data()))
         }
       } catch (error) {
         console.error("Error fetching post:", error)
@@ -62,11 +60,11 @@ export function BlogPostPage() {
   })
 
   return (
-    <article className="min-h-screen bg-background py-5 md:py-5">
+    <article className="min-h-screen bg-background pt-6 pb-24 md:pt-8 md:pb-32">
       <div className="container mx-auto max-w-4xl px-4 md:px-4">
         <Link
-          to="/blogs  "
-          className="mb-5 inline-flex items-center text-sm font-semibold tracking-wider text-neutral-500  transition-colors hover:text-black dark:hover:text-white"
+          to="/blogs"
+          className="mb-5 inline-flex items-center text-sm font-semibold tracking-wider text-neutral-500 uppercase transition-colors hover:text-black dark:hover:text-white"
         >
           <ArrowLeft className="mr-1 h-4 w-4" /> Back
         </Link>
@@ -99,6 +97,11 @@ export function BlogPostPage() {
         <div
           className="max-w-none text-lg leading-relaxed text-neutral-700 dark:text-neutral-300 [&>a]:text-[#dc9e9f] [&>a]:underline [&>a]:hover:text-black dark:[&>a]:hover:text-white [&>blockquote]:mb-6 [&>blockquote]:border-l-4 [&>blockquote]:border-[#dc9e9f] [&>blockquote]:pl-4 [&>blockquote]:text-neutral-500 [&>blockquote]:italic dark:[&>blockquote]:text-neutral-400 [&>h2]:mt-12 [&>h2]:mb-6 [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-black [&>h2]:dark:text-white [&>h3]:mt-8 [&>h3]:mb-4 [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-black [&>h3]:dark:text-white [&>img]:mb-6 [&>img]:rounded-xl [&>img]:shadow-md [&>ol]:mb-6 [&>ol]:ml-6 [&>ol]:list-decimal [&>ol>li]:mb-2 [&>p]:mb-6 [&>ul]:mb-6 [&>ul]:ml-6 [&>ul]:list-disc [&>ul>li]:mb-2"
           dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        <div
+          className="mt-16 border-t border-neutral-200/90 md:mt-20 dark:border-neutral-700/80"
+          aria-hidden="true"
         />
       </div>
     </article>
