@@ -37,12 +37,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm font-medium">
               <li>
-                <a
-                  href="/#organization"
+                <Link
+                  to="/about"
                   className="flex items-center gap-2 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
                   <span className="text-neutral-500"></span> About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
@@ -62,7 +62,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/#organization"
+                  href="/#contact"
                   className="flex items-center gap-2 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
                   <span className="text-neutral-500"></span> Donate

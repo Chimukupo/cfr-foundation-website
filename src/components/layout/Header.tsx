@@ -86,18 +86,16 @@ export function Header() {
           >
             Home
           </Link>
-          <a
-            href="/#organization"
-            className="transition-colors hover:text-black dark:hover:text-white"
+          <Link
+            to="/about"
+            className={
+              location.pathname === "/about"
+                ? linkClassActive
+                : "transition-colors hover:text-black dark:hover:text-white"
+            }
           >
             About Us
-          </a>
-          <a
-            href="/#events"
-            className="transition-colors hover:text-black dark:hover:text-white"
-          >
-            Events
-          </a>
+          </Link>
           <Link
             to="/blogs"
             className={
@@ -110,6 +108,12 @@ export function Header() {
             Blogs
           </Link>
           <a
+            href="/#events"
+            className="transition-colors hover:text-black dark:hover:text-white"
+          >
+            Events
+          </a>
+          <a
             href="/#contact"
             className="transition-colors hover:text-black dark:hover:text-white"
           >
@@ -119,8 +123,11 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-1 sm:gap-2">
-          <Button className="hidden transform cursor-pointer rounded-none bg-black px-6 py-5 text-xs font-bold tracking-wide text-white uppercase shadow-md transition-all duration-300 hover:scale-105 hover:bg-neutral-800 md:inline-flex dark:bg-white dark:text-black dark:hover:bg-neutral-200">
-            Donate
+          <Button
+            className="hidden transform cursor-pointer rounded-none bg-black px-6 py-5 text-xs font-bold tracking-wide text-white uppercase shadow-md transition-all duration-300 hover:scale-105 hover:bg-neutral-800 md:inline-flex dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+            asChild
+          >
+            <a href="/#contact">Donate</a>
           </Button>
 
           {/* Theme Toggle — no border; keep focus ring for keyboard users */}
@@ -186,16 +193,17 @@ export function Header() {
           >
             Home
           </Link>
-          <a
-            href="/#organization"
+          <Link
+            to="/about"
             onClick={closeMobile}
             className={cn(
               "border-b border-neutral-100 py-4 dark:border-neutral-800",
-              linkClass
+              linkClass,
+              location.pathname === "/about" && linkClassActive
             )}
           >
             About Us
-          </a>
+          </Link>
           <a
             href="/#events"
             onClick={closeMobile}
@@ -230,7 +238,7 @@ export function Header() {
             className="mt-4 w-full transform cursor-pointer rounded-none bg-black py-6 text-xs font-bold tracking-wide text-white uppercase shadow-md transition-all duration-300 hover:scale-[1.02] hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             asChild
           >
-            <a href="/#organization" onClick={closeMobile}>
+            <a href="/#contact" onClick={closeMobile}>
               Donate
             </a>
           </Button>

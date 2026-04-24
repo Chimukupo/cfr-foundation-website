@@ -28,6 +28,7 @@ export function BlogsPage() {
   return (
     <div className="min-h-screen bg-neutral-50 pt-6 pb-5 dark:bg-neutral-950">
       <div className="container mx-auto px-4 md:px-6">
+        
         <div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
           <h3 className="mt-0 text-sm font-bold tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
             Articles

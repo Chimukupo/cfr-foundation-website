@@ -50,7 +50,7 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="cursor-pointer rounded-none border-white bg-transparent px-8 py-6 font-bold tracking-wide text-white uppercase transition-all duration-300 hover:bg-white hover:text-black"
+            className="cursor-pointer rounded-none border-white bg-transparent px-8 py-6 font-bold tracking-wide text-white uppercase transition-all duration-300 hover:bg-white hover:text-[#dc9e9f]"
           >
             Donate Now
           </Button>

@@ -27,10 +27,10 @@ const tabContent: Record<TabId, { smallHeading: string; body: ReactNode }> = {
     body: (
       <>
         <p>
-          To transform lives and restore hope in every community we serve - where
-          vulnerable children and young people are seen, supported, and given
-          the tools to build dignified futures free from the cycles of need and
-          environmental harm.
+          To transform lives and restore hope in every community we serve -
+          where vulnerable children and young people are seen, supported, and
+          given the tools to build dignified futures free from the cycles of
+          need and environmental harm.
         </p>
         <p>
           We see a world in which no child is left without care, in which local
@@ -51,7 +51,7 @@ const tabContent: Record<TabId, { smallHeading: string; body: ReactNode }> = {
         </p>
         <p>
           We measure success by children reached, environments protected, and
-          partnerships deepened. We turn short-term support into lasting change 
+          partnerships deepened. We turn short-term support into lasting change
           by working with one program and one community at a time.
         </p>
       </>
@@ -69,8 +69,8 @@ export function Contact() {
 
   return (
     <section
-      className="relative bg-white py-24 dark:bg-neutral-950"
-      id="organization"
+      className="relative scroll-mt-20 bg-white py-24 dark:bg-neutral-950"
+      id="contact"
     >
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="flex flex-col overflow-hidden border border-neutral-200 bg-white shadow-2xl lg:flex-row dark:border-neutral-800 dark:bg-neutral-900">

@@ -62,13 +62,13 @@ export function BlogPostPage() {
   })
 
   return (
-    <article className="min-h-screen bg-background py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl px-4 md:px-6">
+    <article className="min-h-screen bg-background py-5 md:py-5">
+      <div className="container mx-auto max-w-4xl px-4 md:px-4">
         <Link
-          to="/"
-          className="mb-10 inline-flex items-center text-sm font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-black dark:hover:text-white"
+          to="/blogs  "
+          className="mb-5 inline-flex items-center text-sm font-semibold tracking-wider text-neutral-500  transition-colors hover:text-black dark:hover:text-white"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
+          <ArrowLeft className="mr-1 h-4 w-4" /> Back
         </Link>
 
         <div className="mb-10 space-y-4">
