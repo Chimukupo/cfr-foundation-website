@@ -107,12 +107,16 @@ export function Header() {
           >
             Blog
           </Link>
-          <a
-            href="/#events"
-            className="transition-colors hover:text-black dark:hover:text-white"
+          <Link
+            to="/events"
+            className={
+              location.pathname === "/events"
+                ? linkClassActive
+                : "transition-colors hover:text-black dark:hover:text-white"
+            }
           >
             Events
-          </a>
+          </Link>
           <Link
             to="/contact"
             className={
@@ -208,16 +212,17 @@ export function Header() {
           >
             About Us
           </Link>
-          <a
-            href="/#events"
+          <Link
+            to="/events"
             onClick={closeMobile}
             className={cn(
               "border-b border-neutral-100 py-4 dark:border-neutral-800",
-              linkClass
+              linkClass,
+              location.pathname === "/events" && linkClassActive
             )}
           >
             Events
-          </a>
+          </Link>
           <Link
             to="/blog"
             onClick={closeMobile}

@@ -10,7 +10,7 @@ const PHONE = "+260 98 1484409"
 const WHATSAPP = "+260 95 4756031"
 /** International number only, no + (matches wa.me / WhatsApp link format) */
 const WHATSAPP_NUMBER_DIGITS = "260954756031"
-const ADDRESS = "Ngwezi Road, Lusaka, Zambia"
+const ADDRESS = "Ngwezi Rd, Roma, Lusaka, Zambia"
 
 /**
  * wa.me URL length is limited; keep pre-encoded text under a safe size so

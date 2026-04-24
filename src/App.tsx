@@ -12,6 +12,7 @@ import { AboutPage } from "@/pages/AboutPage"
 import { BlogPostPage } from "@/pages/BlogPostPage"
 import { BlogsPage } from "@/pages/BlogsPage"
 import { ContactPage } from "@/pages/ContactPage"
+import { EventsPage } from "@/pages/EventsPage"
 
 function AppLayout() {
   const { pathname } = useLocation()
@@ -25,6 +26,7 @@ function AppLayout() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/events" element={<EventsPage />} />
           <Route path="/blogs" element={<Navigate to="/blog" replace />} />
           <Route path="/blog" element={<BlogsPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />

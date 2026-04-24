@@ -69,12 +69,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/#events"
+                <Link
+                  to="/events"
                   className="flex items-center gap-2 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
                   <span className="text-neutral-500"></span> Events
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -120,7 +120,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex gap-4">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-neutral-500" />
-                <span>Ngwezi Road, Lusaka, Zambia</span>
+                <span>Ngwezi Rd, Roma, Lusaka, Zambia</span>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="h-5 w-5 shrink-0 text-neutral-500" />

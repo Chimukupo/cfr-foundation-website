@@ -39,8 +39,14 @@ export interface BlogPost {
   isPublished: boolean
 }
 
-/** If the CMS only stores a file name, prefix the folder used in your Storage bucket. */
-function ensureStorageObjectPath(s: string): string {
+/**
+ * If the CMS only stores a file name, prefix a Storage folder (e.g. blog_images,
+ * event_images) for the default bucket.
+ */
+function ensureStorageObjectPath(
+  s: string,
+  bareFileFolder: "blog_images" | "event_images" = "blog_images"
+): string {
   const t = s.trim()
   if (!t) return t
   if (
@@ -52,7 +58,7 @@ function ensureStorageObjectPath(s: string): string {
   }
   if (t.includes("/")) return t
   if (/\.(jpe?g|png|gif|webp|svg|bmp)$/i.test(t)) {
-    return `blog_images/${t}`
+    return `${bareFileFolder}/${t}`
   }
   return t
 }
@@ -64,11 +70,12 @@ function looksLikeImageString(s: string): boolean {
   if (t.startsWith("gs://")) return true
   if (
     t.includes("blog_images/") ||
+    t.includes("event_images/") ||
     t.includes("firebasestorage.googleapis.com")
   )
     return true
   if (
-    (t.includes("/") || t.startsWith("blog_")) &&
+    (t.includes("/") || t.startsWith("blog_") || t.startsWith("event_")) &&
     /\.(jpe?g|png|gif|webp|svg|bmp)/i.test(t)
   ) {
     return true
@@ -127,7 +134,10 @@ export function resolvePostImageField(data: DocumentData): string {
           k === "storagePath" ||
           k === "fullPath" ||
           k === "value") &&
-        (t.includes("blog_") || t.includes("/") || t.includes("images/"))
+        (t.includes("blog_") ||
+          t.includes("event_") ||
+          t.includes("/") ||
+          t.includes("images/"))
       ) {
         return t
       }
@@ -210,6 +220,56 @@ export function normalizeBlogPost(id: string, data: DocumentData): BlogPost {
     ...data,
     imageUrl,
   } as BlogPost
+}
+
+/** Upcoming event from Firestore `events` (FireCMS, etc.) */
+export interface FoundationEvent {
+  id: string
+  title: string
+  excerpt: string
+  eventDate: Timestamp | { toDate: () => Date } | null
+  imageUrl: string
+  isPublished: boolean
+  location?: string
+  slug?: string
+}
+
+function eventDateToMs(ev: FoundationEvent): number {
+  const d = ev.eventDate
+  if (!d) return 0
+  return d && "toDate" in d && typeof d.toDate === "function"
+    ? d.toDate().getTime()
+    : 0
+}
+
+export function normalizeEvent(id: string, data: DocumentData): FoundationEvent {
+  const raw = resolvePostImageField(data)
+  const imageUrl = raw
+    ? ensureStorageObjectPath(raw, "event_images")
+    : ""
+  return {
+    id,
+    ...data,
+    imageUrl,
+  } as FoundationEvent
+}
+
+/**
+ * Published events with an `eventDate` in the future, soonest first.
+ * Uses `events` collection; align field names in FireCMS (`isPublished`, `eventDate`, etc.).
+ */
+export const getUpcomingEvents = async (): Promise<FoundationEvent[]> => {
+  const ref = collection(db, "events")
+  const q = query(ref, where("isPublished", "==", true))
+  const snap = await getDocs(q)
+  const now = Date.now()
+  const list = snap.docs
+    .map((doc) => normalizeEvent(doc.id, doc.data()))
+    .filter((ev) => {
+      const t = eventDateToMs(ev)
+      return t > now
+    })
+  return list.sort((a, b) => eventDateToMs(a) - eventDateToMs(b))
 }
 
 // Fetch published posts
