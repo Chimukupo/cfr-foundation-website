@@ -57,15 +57,15 @@ export function AboutPage() {
                   forgotten.
                 </p>
                 <p>
-                  <a
-                    href="/#contact"
+                  <Link
+                    to="/contact"
                     className="font-bold text-[#dc9e9f] underline underline-offset-2 transition-colors hover:text-black dark:hover:text-white"
                   >
                     Get in touch
-                  </a>{" "}
+                  </Link>{" "}
                   to partner with us, or{" "}
                   <Link
-                    to="/blogs"
+                    to="/blog"
                     className="font-bold text-[#dc9e9f] underline underline-offset-2 transition-colors hover:text-black dark:hover:text-white"
                   >
                     explore our blog

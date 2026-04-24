@@ -46,19 +46,19 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/blogs"
+                  to="/blog"
                   className="flex items-center gap-2 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
-                  <span className="text-neutral-500"></span> Blogs
+                  <span className="text-neutral-500"></span> Blog
                 </Link>
               </li>
               <li>
-                <a
-                  href="/#contact"
+                <Link
+                  to="/contact"
                   className="flex items-center gap-2 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
                   <span className="text-neutral-500"></span> Contact Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a

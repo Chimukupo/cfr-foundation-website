@@ -97,15 +97,15 @@ export function Header() {
             About Us
           </Link>
           <Link
-            to="/blogs"
+            to="/blog"
             className={
-              location.pathname.startsWith("/blog") ||
-              location.pathname === "/blogs"
+              location.pathname === "/blog" ||
+              location.pathname.startsWith("/blog/")
                 ? linkClassActive
                 : "transition-colors hover:text-black dark:hover:text-white"
             }
           >
-            Blogs
+            Blog
           </Link>
           <a
             href="/#events"
@@ -113,12 +113,16 @@ export function Header() {
           >
             Events
           </a>
-          <a
-            href="/#contact"
-            className="transition-colors hover:text-black dark:hover:text-white"
+          <Link
+            to="/contact"
+            className={
+              location.pathname === "/contact"
+                ? linkClassActive
+                : "transition-colors hover:text-black dark:hover:text-white"
+            }
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Actions */}
@@ -215,25 +219,29 @@ export function Header() {
             Events
           </a>
           <Link
-            to="/blogs"
+            to="/blog"
             onClick={closeMobile}
             className={cn(
               "border-b border-neutral-100 py-4 dark:border-neutral-800",
               linkClass,
-              (location.pathname.startsWith("/blog") ||
-                location.pathname === "/blogs") &&
+              (location.pathname === "/blog" ||
+                location.pathname.startsWith("/blog/")) &&
                 linkClassActive
             )}
           >
-            Blogs
+            Blog
           </Link>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             onClick={closeMobile}
-            className={cn("py-4", linkClass)}
+            className={cn(
+              "py-4",
+              linkClass,
+              location.pathname === "/contact" && linkClassActive
+            )}
           >
             Contact
-          </a>
+          </Link>
           <Button
             className="mt-4 w-full transform cursor-pointer rounded-none bg-black py-6 text-xs font-bold tracking-wide text-white uppercase shadow-md transition-all duration-300 hover:scale-[1.02] hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             asChild

@@ -32,7 +32,7 @@ export function Blog() {
   }
 
   return (
-    <section className="bg-neutral-50 py-10 dark:bg-neutral-950" id="blogs">
+    <section className="bg-neutral-50 py-10 dark:bg-neutral-950" id="blog">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
           <h3 className="text-sm font-bold tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
@@ -126,7 +126,7 @@ export function Blog() {
         {posts.length > 0 && (
           <div className="mt-14 flex justify-center">
             <Link
-              to="/blogs"
+              to="/blog"
               className="transform rounded-none bg-black px-10 py-5 text-xs font-bold tracking-wide text-white uppercase shadow-md transition-all duration-300 hover:scale-105 hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             >
               View All Posts

@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
   useLocation,
 } from "react-router-dom"
 import { Header } from "@/components/layout/Header"
@@ -10,6 +11,7 @@ import { HomePage } from "@/pages/HomePage"
 import { AboutPage } from "@/pages/AboutPage"
 import { BlogPostPage } from "@/pages/BlogPostPage"
 import { BlogsPage } from "@/pages/BlogsPage"
+import { ContactPage } from "@/pages/ContactPage"
 
 function AppLayout() {
   const { pathname } = useLocation()
@@ -22,7 +24,9 @@ function AppLayout() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blogs" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog" element={<BlogsPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
       </main>

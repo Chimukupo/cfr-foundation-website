@@ -63,7 +63,7 @@ export function BlogPostPage() {
     <article className="min-h-screen bg-background pt-6 pb-24 md:pt-8 md:pb-32">
       <div className="container mx-auto max-w-4xl px-4 md:px-4">
         <Link
-          to="/blogs"
+          to="/blog"
           className="mb-5 inline-flex items-center text-sm font-semibold tracking-wider text-neutral-500 uppercase transition-colors hover:text-black dark:hover:text-white"
         >
           <ArrowLeft className="mr-1 h-4 w-4" /> Back
